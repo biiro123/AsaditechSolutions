@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register — Asadi Tech Solutions</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <h1 class="brand">Asadi Tech Solutions</h1>
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h2>Create an account</h2>
+    <div class="form" style="max-width:520px;">
+      <?php if (isset($_GET['error'])): ?>
+        <div style="color:#b91c1c; margin-bottom:10px;"><?= htmlspecialchars($_GET['error']) ?></div>
+      <?php endif; ?>
+      <form action="php/auth_register.php" method="post">
+        <input type="text" name="name" placeholder="Full name" required />
+        <input type="email" name="email" placeholder="Email address" required />
+        <input type="password" name="password" placeholder="Choose a secure password" required />
+        <button class="btn" type="submit">Register</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 Asadi Tech Solutions — Butaleja</div>
+  </footer>
+</body>
+</html>

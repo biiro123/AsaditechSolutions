@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | AsadiTech</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1 class="logo">Asadi<span>Tech</span></h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <h2>Get In Touch</h2>
+      <p>Have a project in mind, need a website, or want to collaborate? Feel free to reach out through any of the options below.</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>📞 Contact Information</h3>
+          <p><strong>Phone:</strong> <a href="tel:+256742859178">+256 742 859 178</a></p>
+          <p><strong>Email:</strong> <a href="mailto:biiroasadi804@gmail.com">biiroasadi804@gmail.com</a></p>
+          <p><strong>Location:</strong> Kampala, Uganda</p>
+        </div>
+
+	<form class="contact-form" action="php/contact_process.php" method="post">
+ 	 <input type="text" name="name" placeholder="Your Name" required>
+	  <input type="email" name="email" placeholder="Your Email" required>
+ 	 <input type="text" name="subject" placeholder="Subject" required>
+ 	 <textarea name="message" placeholder="Your Message" required></textarea>
+ 	 <button type="submit">Send Message</button>
+	</form>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 AsadiTech | Designed with ❤️ by Biiro Asadi</p>
+  </footer>
+</body>
+</html>
