@@ -1,65 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services | AsadiTech</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Asadi Tech Solutions</title>
+  <style>
+    /* Reset & Theme Styles */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #111827;
+      line-height: 1.6;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Strictly Horizontal Navigation Bar */
+    header {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 18px 6% !important;
+      background-color: #ffffff !important;
+      border-bottom: 3px solid #0056b3 !important;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #000000;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .logo span { color: #0056b3; }
+    nav {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 24px !important;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none !important;
+      color: #000000 !important;
+      font-weight: 600 !important;
+      font-size: 0.98rem !important;
+      transition: color 0.2s ease;
+    }
+    nav a:hover, nav a.active {
+      color: #0056b3 !important;
+    }
+    .login-btn {
+      background-color: #ff6b00 !important;
+      color: #ffffff !important;
+      padding: 8px 20px !important;
+      border-radius: 5px !important;
+      font-weight: bold !important;
+      transition: background-color 0.2s ease;
+    }
+    .login-btn:hover {
+      background-color: #e05e00 !important;
+    }
+
+    /* Services Section Container */
+    .services-section {
+      padding: 80px 8%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 60px auto;
+    }
+    .section-header h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #000000;
+    }
+    .section-header h2 span { color: #0056b3; }
+    .section-header p {
+      color: #4b5563;
+      font-size: 1.1rem;
+    }
+
+    /* Rich Cards Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .service-card {
+      background-color: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-top: 5px solid #0056b3;
+      border-radius: 10px;
+      padding: 35px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 86, 179, 0.12);
+      border-color: #0056b3;
+    }
+    .service-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #000000;
+    }
+    .service-card p {
+      color: #374151;
+      font-size: 1rem;
+      margin-bottom: 25px;
+      line-height: 1.6;
+    }
+    .service-card ul {
+      list-style: none;
+      margin-bottom: 25px;
+      padding: 0;
+    }
+    .service-card ul li {
+      color: #4b5563;
+      padding: 6px 0;
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 20px;
+    }
+    .service-card ul li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #16a34a;
+      font-weight: bold;
+    }
+
+    /* Buttons */
+    .btn-card {
+      display: inline-block;
+      background-color: #16a34a;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      text-align: center;
+      transition: background-color 0.2s;
+    }
+    .btn-card:hover {
+      background-color: #15803d;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #0056b3;
+      color: #ffffff;
+      font-weight: 500;
+      font-size: 0.95rem;
+      margin-top: 80px;
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 15px 4% !important; }
+      .section-header h2 { font-size: 2.1rem; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Horizontal Navigation Bar -->
   <header>
-    <h1 class="logo">Asadi<span>Tech</span></h1>
+    <div class="logo">Asadi <span>Tech</span> Solutions</div>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html" class="active">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="login-btn">Login</a>
     </nav>
   </header>
 
+  <!-- Services Section -->
   <section class="services-section">
-    <div class="services-container">
-      <h2>My Professional Services</h2>
-      <p>I offer a variety of creative and technical services to help clients grow in the digital world.</p>
+    <div class="section-header">
+      <h2>Professional <span>Services</span></h2>
+      <p>Delivering cutting-edge web development, robust networking infrastructure, and computerized accounting systems tailored to your success.</p>
+    </div>
 
-      <div class="service-cards">
-        <div class="card">
-          <h3>🌐 Website Design</h3>
-          <p>Designing beautiful and mobile-friendly websites that represent your brand effectively and attract customers.</p>
+    <div class="services-grid">
+      <!-- Card 1 -->
+      <div class="service-card">
+        <div>
+          <h3>💻 Custom Web & Software Development</h3>
+          <p>Full-stack web design and application engineering to give your business or institution a powerful online presence.</p>
+          <ul>
+            <li>Responsive business & school websites</li>
+            <li>Executive recruitment & event portals</li>
+            <li>Clinic & laboratory management systems</li>
+            <li>SACCO financial accounting modules</li>
+          </ul>
         </div>
+        <a href="contact.html" class="btn-card">Request Service</a>
+      </div>
 
-        <div class="card">
-          <h3>💻 Computer Repair</h3>
-          <p>Diagnosing and fixing hardware and software issues to keep your systems running smoothly.</p>
+      <!-- Card 2 -->
+      <div class="service-card">
+        <div>
+          <h3>📡 Wi-Fi Hotspot & Network Engineering</h3>
+          <p>Comprehensive networking setups designed to bring fast, reliable internet connectivity to trading centers and organizations.</p>
+          <ul>
+            <li>Commercial local Wi-Fi hotspot deployment</li>
+            <li>Centipid billing & voucher technology</li>
+            <li>MikroTik router & PoE switch configuration</li>
+            <li>Dual electrical & solar backup power systems</li>
+          </ul>
         </div>
+        <a href="contact.html" class="btn-card">Request Service</a>
+      </div>
 
-        <div class="card">
-          <h3>📱 Phone Repair</h3>
-          <p>Quick and reliable phone repair services for both Android and iPhone devices.</p>
+      <!-- Card 3 -->
+      <div class="service-card">
+        <div>
+          <h3>🛠️ IT Support & Computer Maintenance</h3>
+          <p>Professional technical support to keep your office hardware, software, and systems running at peak performance.</p>
+          <ul>
+            <li>Computer repair & hardware diagnostics</li>
+            <li>Software installation & OS configuration</li>
+            <li>Computerized accounting (QuickBooks & Tally)</li>
+            <li>Staff ICT training & administrative support</li>
+          </ul>
         </div>
-
-        <div class="card">
-          <h3>🎨 Graphics & Branding</h3>
-          <p>Creating unique logos, posters, and flyers that make your brand stand out visually.</p>
-        </div>
-
-        <div class="card">
-          <h3>⚙️ Software Installation</h3>
-          <p>Installing and configuring essential software, drivers, and utilities for your computer.</p>
-        </div>
-
-        <div class="card">
-          <h3>📊 IT Support & Training</h3>
-          <p>Offering personalized training sessions in computer literacy, website use, and online tools.</p>
-        </div>
+        <a href="contact.html" class="btn-card">Request Service</a>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 AsadiTech | Designed with ❤️ by Biiro Asadi</p>
+    <p>© 2026 Asadi Tech Solutions — Butaleja, Uganda | Designed by Biiro Asadi</p>
   </footer>
+
 </body>
 </html>
