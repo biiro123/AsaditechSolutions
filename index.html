@@ -3,67 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Asadi Tech Solutions | Professional IT & Web Development</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Asadi Tech Solutions | Home</title>
   <style>
-    /* Modern Wide-Screen Layout & Striking Aesthetics */
+    /* Reset & Bright White, Blue, Black Base Theme */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0b0e14;
-      color: #f8fafc;
+      background-color: #ffffff;
+      color: #111827;
       line-height: 1.6;
       width: 100%;
       overflow-x: hidden;
     }
 
-    /* Navigation Bar */
+    /* Strictly Horizontal Navigation Bar */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 6%;
-      background-color: #121824;
-      border-bottom: 1px solid #1e293b;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 18px 6% !important;
+      background-color: #ffffff !important;
+      border-bottom: 3px solid #0056b3 !important;
       position: sticky;
       top: 0;
       z-index: 1000;
       width: 100%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
     }
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #ffffff;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #000000;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
-    .logo span { color: #00f2fe; }
+    .logo span { color: #0056b3; }
     nav {
-      display: flex;
-      align-items: center;
-      gap: 25px;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 24px !important;
       flex-wrap: wrap;
     }
     nav a {
-      text-decoration: none;
-      color: #cbd5e1;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
+      text-decoration: none !important;
+      color: #000000 !important;
+      font-weight: 600 !important;
+      font-size: 0.98rem !important;
+      transition: color 0.2s ease;
     }
     nav a:hover, nav a.active {
-      color: #00f2fe;
+      color: #0056b3 !important;
     }
     .login-btn {
-      background: transparent;
-      border: 2px solid #00f2fe;
-      color: #00f2fe;
-      padding: 8px 18px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
+      background-color: #ff6b00 !important;
+      color: #ffffff !important;
+      padding: 8px 20px !important;
+      border-radius: 5px !important;
+      font-weight: bold !important;
+      transition: background-color 0.2s ease;
     }
     .login-btn:hover {
-      background: #00f2fe;
-      color: #0b0e14;
+      background-color: #e05e00 !important;
+      color: #ffffff !important;
     }
 
     /* Hero Section */
@@ -72,72 +75,99 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-start;
-      padding: 100px 8%;
-      background: linear-gradient(135deg, #121824 0%, #0b0e14 100%);
-      border-bottom: 1px solid #1e293b;
-      min-height: 80vh;
+      padding: 90px 8%;
+      background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+      border-bottom: 1px solid #e2e8f0;
     }
     .hero-text {
       max-width: 850px;
     }
+    .hero-badge {
+      display: inline-block;
+      background-color: #0056b3;
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
     .hero-text h1 {
-      font-size: 3.2rem;
+      font-size: 3.1rem;
       font-weight: 800;
       margin-bottom: 20px;
-      color: #ffffff;
+      color: #000000;
       line-height: 1.2;
     }
-    .hero-text h1 span { color: #00f2fe; }
+    .hero-text h1 span { color: #0056b3; }
     .hero-text p {
-      font-size: 1.25rem;
-      color: #94a3b8;
+      font-size: 1.2rem;
+      color: #1f2937;
       margin-bottom: 35px;
       line-height: 1.7;
     }
     .hero-buttons {
       display: flex;
-      gap: 15px;
+      gap: 16px;
       flex-wrap: wrap;
     }
-    .btn {
-      background-color: #00f2fe;
-      color: #0b0e14;
+    /* Green Primary Button */
+    .btn-green {
+      background-color: #16a34a;
+      color: #ffffff;
       padding: 14px 30px;
       font-weight: bold;
       border-radius: 6px;
       text-decoration: none;
       font-size: 1rem;
       transition: transform 0.2s, background-color 0.2s;
-      box-shadow: 0 4px 14px rgba(0, 242, 254, 0.3);
+      box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
     }
-    .btn:hover {
+    .btn-green:hover {
+      background-color: #15803d;
       transform: translateY(-2px);
-      background-color: #00c7d4;
     }
-    .btn.alt {
-      background-color: transparent;
+    /* Orange Secondary Button */
+    .btn-orange {
+      background-color: #ff6b00;
       color: #ffffff;
-      border: 2px solid #334155;
-      box-shadow: none;
+      padding: 14px 30px;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: transform 0.2s, background-color 0.2s;
+      box-shadow: 0 4px 12px rgba(255, 107, 0, 0.25);
     }
-    .btn.alt:hover {
-      border-color: #00f2fe;
-      background-color: rgba(0, 242, 254, 0.05);
+    .btn-orange:hover {
+      background-color: #e05e00;
+      transform: translateY(-2px);
     }
 
-    /* Feature Highlights / Expertise Section */
+    /* Core Capabilities Section */
     .features-section {
       padding: 80px 8%;
       max-width: 1400px;
       margin: 0 auto;
+      background-color: #ffffff;
     }
     .section-title {
       text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 50px;
-      color: #ffffff;
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #000000;
     }
-    .section-title span { color: #00f2fe; }
+    .section-title span { color: #0056b3; }
+    .section-subtitle {
+      text-align: center;
+      color: #374151;
+      max-width: 700px;
+      margin: 0 auto 50px auto;
+      font-size: 1.05rem;
+    }
     
     .grid-container {
       display: grid;
@@ -145,46 +175,69 @@
       gap: 30px;
     }
     .card {
-      background-color: #121824;
-      border: 1px solid #1e293b;
-      border-radius: 10px;
+      background-color: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-top: 5px solid #0056b3;
+      border-radius: 8px;
       padding: 35px;
-      transition: transform 0.3s, border-color 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     }
     .card:hover {
       transform: translateY(-5px);
-      border-color: #00f2fe;
+      box-shadow: 0 10px 25px rgba(0, 86, 179, 0.12);
     }
     .card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 15px;
-      color: #00f2fe;
+      font-size: 1.35rem;
+      margin-bottom: 14px;
+      color: #000000;
     }
     .card p {
-      color: #94a3b8;
+      color: #374151;
       font-size: 1rem;
+    }
+
+    /* Black & Blue Call-to-Action Strip */
+    .cta-strip {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 60px 8%;
+      text-align: center;
+      border-top: 4px solid #0056b3;
+    }
+    .cta-strip h2 {
+      font-size: 2.1rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+    .cta-strip h2 span { color: #38bdf8; }
+    .cta-strip p {
+      color: #e5e7eb;
+      max-width: 650px;
+      margin: 0 auto 30px auto;
+      font-size: 1.1rem;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 30px;
-      background-color: #121824;
-      color: #64748b;
-      border-top: 1px solid #1e293b;
+      padding: 25px;
+      background-color: #0056b3;
+      color: #ffffff;
+      font-weight: 500;
       font-size: 0.95rem;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
-      .hero-text h1 { font-size: 2.3rem; }
-      header { padding: 15px 5%; }
+      .hero-text h1 { font-size: 2.2rem; }
+      header { padding: 15px 4% !important; }
+      nav { gap: 14px !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Horizontal Navigation Bar -->
   <header>
     <div class="logo">Asadi <span>Tech</span> Solutions</div>
     <nav>
@@ -200,37 +253,49 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
+      <span class="hero-badge">Computer Scientist • Developer • Network Engineer</span>
       <h1>Hello, I'm <span>Biiro Asadi</span></h1>
-      <p>A First-Class Computer Science Graduate, Network Administrator, and Full-Stack Developer from Uganda. I engineer high-performance web applications, commercial Wi-Fi network deployments, and robust database management systems that drive business growth.</p>
+      <p>A First-Class Diploma graduate in Computer Science from Uganda. I design and engineer modern websites, commercial Wi-Fi hotspot networks, and custom database management systems that help businesses and institutions grow.</p>
       <div class="hero-buttons">
-        <a href="services.html" class="btn">Explore My Services</a>
-        <a href="contact.html" class="btn alt">Hire Me Today</a>
+        <a href="contact.html" class="btn-green">Hire Me Now</a>
+        <a href="services.html" class="btn-orange">Explore My Services</a>
       </div>
     </div>
   </section>
 
-  <!-- Professional Expertise Overview -->
+  <!-- Core Capabilities -->
   <section class="features-section">
-    <h2 class="section-title">Core <span>Capabilities</span></h2>
+    <h2 class="section-title">What I <span>Deliver</span></h2>
+    <p class="section-subtitle">Reliable, practical technology solutions tailored for businesses, schools, and organizations across Uganda.</p>
     <div class="grid-container">
       <div class="card">
-        <h3>💻 Custom Software & Web Development</h3>
-        <p>Building secure, scalable, and responsive web applications, executive recruitment portals, clinic management systems, and SACCO modules tailored to your business workflow.</p>
+        <h3>💻 Web & Software Development</h3>
+        <p>Clean, responsive websites, recruitment portals, clinic records software, and SACCO financial systems engineered for speed and reliability.</p>
       </div>
       <div class="card">
-        <h3>📡 Wi-Fi Hotspot & Network Engineering</h3>
-        <p>Designing and deploying commercial local Wi-Fi hotspot networks integrated with Centipid billing technology, MikroTik routers, PoE switches, and dual solar/electrical backups.</p>
+        <h3>📡 Wi-Fi Hotspot & Networking</h3>
+        <p>Commercial Wi-Fi hotspot setups using MikroTik routers, PoE switches, Centipid billing systems, and dual solar/grid backup power.</p>
       </div>
       <div class="card">
-        <h3>📊 Database & Financial Systems</h3>
-        <p>Expert database administration with MySQL/PHP, paired with computerized accounting competencies including QuickBooks and Tally for accurate financial tracking.</p>
+        <h3>📊 Database & Accounting Systems</h3>
+        <p>Structured MySQL database management paired with computerized accounting software expertise in QuickBooks and Tally.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- High-Contrast Black & Blue CTA Section -->
+  <section class="cta-strip">
+    <h2>Ready to Upgrade Your <span>Business Technology?</span></h2>
+    <p>Reach out directly via WhatsApp or Email for fast project quotes, system setups, and IT consultations.</p>
+    <div class="hero-buttons" style="justify-content: center;">
+      <a href="https://wa.me/256742859178?text=Hello%20AsadiTech,%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" class="btn-green">Chat on WhatsApp</a>
+      <a href="portfolio.html" class="btn-orange">View My Work</a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2026 Asadi Tech Solutions | Engineered with excellence by Biiro Asadi</p>
+    <p>© 2026 Asadi Tech Solutions — Butaleja, Uganda | Designed by Biiro Asadi</p>
   </footer>
 
 </body>
