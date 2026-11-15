@@ -23,7 +23,7 @@
   <section class="contact-section">
     <div class="contact-container">
       <h2>Get In Touch</h2>
-      <p>Have a project in mind, need a website, or want to collaborate? Feel free to reach out through any of the options below.</p>
+      <p>Have a project in mind, need a website, or want to collaborate? Fill out the form below and send your message instantly via WhatsApp or Email.</p>
 
       <div class="contact-grid">
         <div class="contact-info">
@@ -33,20 +33,56 @@
           <p><strong>Location:</strong> Kampala, Uganda</p>
         </div>
 
-	<form class="contact-form" action="php/contact_process.php" method="post">
- 	 <input type="text" name="name" placeholder="Your Name" required>
-	  <input type="email" name="email" placeholder="Your Email" required>
- 	 <input type="text" name="subject" placeholder="Subject" required>
- 	 <textarea name="message" placeholder="Your Message" required></textarea>
- 	 <button type="submit">Send Message</button>
-	</form>
-
+        <!-- Static Contact Form with WhatsApp & Email Actions -->
+        <form class="contact-form" id="contactForm" onsubmit="return false;">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Your Email" required>
+          <input type="text" id="subject" placeholder="Subject" required>
+          <textarea id="message" placeholder="Your Message" required></textarea>
+          
+          <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+            <button type="button" onclick="sendViaWhatsApp()" style="background-color: #25D366; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; flex: 1;">Send via WhatsApp</button>
+            <button type="button" onclick="sendViaEmail()" style="background-color: #007bff; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; flex: 1;">Send via Email</button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2025 AsadiTech | Designed with ❤️ by Biiro Asadi</p>
+    <p>© 2026 AsadiTech | Designed with ❤️ by Biiro Asadi</p>
   </footer>
+
+  <script>
+    function sendViaWhatsApp() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields before sending.');
+        return;
+      }
+
+      const text = `Hello AsadiTech,%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Subject:* ${encodeURIComponent(subject)}%0A*Message:* ${encodeURIComponent(message)}`;
+      window.open(`https://wa.me/256742859178?text=${text}`, '_blank');
+    }
+
+    function sendViaEmail() {
+      const name = document.getElementById('name'].value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields before sending.');
+        return;
+      }
+
+      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+      window.location.href = `mailto:biiroasadi804@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+  </script>
 </body>
 </html>
