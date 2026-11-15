@@ -3,51 +3,210 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | AsadiTech</title>
+  <title>About | Asadi Tech Solutions</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Modern Wide-Screen Layout & Striking Aesthetics */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b0e14;
+      color: #f8fafc;
+      line-height: 1.6;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Navigation Bar */
+    header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 20px 6% !important;
+      background-color: #121824 !important;
+      border-bottom: 1px solid #1e293b !important;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+    .logo span { color: #00f2fe; }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #cbd5e1;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      color: #00f2fe;
+    }
+    .login-btn {
+      background: transparent;
+      border: 2px solid #00f2fe;
+      color: #00f2fe;
+      padding: 8px 18px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .login-btn:hover {
+      background: #00f2fe;
+      color: #0b0e14;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 80px 8%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .about-container h2 {
+      font-size: 2.5rem;
+      margin-bottom: 25px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .about-container h2 span { color: #00f2fe; }
+    .about-bio {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 900px;
+      margin: 0 auto 50px auto;
+      text-align: center;
+      line-height: 1.8;
+    }
+    .about-bio strong { color: #ffffff; }
+
+    /* Cards Grid */
+    .about-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .card {
+      background-color: #121824;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 35px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: #00f2fe;
+    }
+    .card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      color: #00f2fe;
+    }
+    .card p {
+      color: #94a3b8;
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+    .card ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .card ul li {
+      color: #94a3b8;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.95rem;
+      position: relative;
+      padding-left: 20px;
+    }
+    .card ul li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #00f2fe;
+    }
+    .card ul li:last-child {
+      border-bottom: none;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #121824;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+      font-size: 0.95rem;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .about-container h2 { font-size: 2rem; }
+      header { padding: 15px 5%; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Navigation Bar -->
   <header>
-    <h1 class="logo">Asadi<span>Tech</span></h1>
+    <div class="logo">Asadi <span>Tech</span> Solutions</div>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="login-btn">Login</a>
     </nav>
   </header>
 
+  <!-- About Section -->
   <section class="about-section">
     <div class="about-container">
-      <h2>About Me</h2>
-      <p>Hello! I'm <strong>Biiro Asadi</strong>, a passionate and creative <strong>Web Developer</strong> from Uganda. I specialize in designing responsive and attractive websites that bring ideas to life. I combine creativity and functionality to make every website engaging and effective.</p>
+      <h2>About <span>Me</span></h2>
+      <p class="about-bio">
+        Hello! I'm <strong>Biiro Asadi</strong>, a First-Class Diploma graduate in Computer Science from YMCA Comprehensive Institute, based in Butaleja District, Uganda. I specialize in engineering responsive web applications, managing local Wi-Fi networks, and building robust database solutions that empower businesses, schools, and communities to bridge the digital gap.
+      </p>
 
       <div class="about-cards">
         <div class="card">
           <h3>🎯 Mission</h3>
-          <p>To empower small businesses, schools, and individuals through affordable and beautiful web solutions that inspire growth.</p>
+          <p>To empower small businesses, schools, and rural communities across Uganda through affordable, reliable, and professional web development and IT solutions that inspire sustainable growth.</p>
         </div>
         <div class="card">
           <h3>💡 Vision</h3>
-          <p>To be among the leading young innovators in Uganda who use ICT to bridge the digital gap in rural communities.</p>
+          <p>To be among the leading young tech innovators and network engineers in East Africa, utilizing ICT and practical software solutions to bridge the rural digital divide.</p>
         </div>
         <div class="card">
-          <h3>⚙️ Skills</h3>
+          <h3>⚙️ Professional Skills</h3>
           <ul>
-            <li>Website Design & Development</li>
-            <li>Computer Repair & Maintenance</li>
-            <li>Graphics & Branding</li>
-            <li>Software Installation</li>
+            <li>Full-Stack Web Development (HTML, CSS, PHP, Python)</li>
+            <li>Database Management & System Analysis (MySQL)</li>
+            <li>Wi-Fi Hotspot & Network Administration (MikroTik)</li>
+            <li>Computer Repair, Maintenance & System Setup</li>
+            <li>Computerized Accounting (QuickBooks & Tally)</li>
+            <li>ICT Training & Administrative Support</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 AsadiTech | Designed with ❤️ by Biiro Asadi</p>
+    <p>© 2026 Asadi Tech Solutions | Designed with ❤️ by Biiro Asadi</p>
   </footer>
+
 </body>
 </html>
