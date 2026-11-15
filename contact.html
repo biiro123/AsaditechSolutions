@@ -6,40 +6,127 @@
   <title>Contact | AsadiTech</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    /* Force header and navigation links into a horizontal row */
+    /* Force horizontal navigation overriding style.css */
     header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5%;
-      background-color: #0b0f19;
-      flex-wrap: wrap;
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 18px 5% !important;
+      background-color: #0b0f19 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
     }
     header .logo {
-      margin: 0;
-      font-size: 1.5rem;
-      color: #fff;
+      margin: 0 !important;
+      font-size: 1.6rem !important;
+      color: #ffffff !important;
     }
     header .logo span {
-      color: #00ffcc;
+      color: #00ffcc !important;
     }
     header nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-      align-items: center;
+      display: flex !important;
+      flex-direction: row !important;
+      list-style: none !important;
+      gap: 24px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    header nav ul li {
+      display: inline-block !important;
+      margin: 0 !important;
     }
     header nav ul li a {
-      text-decoration: none;
-      color: #ffffff;
-      font-weight: 500;
-      transition: color 0.3s;
+      text-decoration: none !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      font-size: 1rem !important;
     }
     header nav ul li a:hover,
     header nav ul li a.active {
+      color: #00ffcc !important;
+    }
+
+    /* Clean layout for the contact section */
+    body {
+      margin: 0;
+      background-color: #070a11;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+    .contact-section {
+      padding: 50px 5%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .contact-section h2 {
+      text-align: center;
       color: #00ffcc;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .contact-section > .contact-container > p {
+      text-align: center;
+      color: #cccccc;
+      margin-bottom: 40px;
+    }
+    .contact-grid {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .contact-info {
+      flex: 1;
+      min-width: 260px;
+      background: #121826;
+      padding: 25px;
+      border-radius: 8px;
+    }
+    .contact-info a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+    .contact-form {
+      flex: 2;
+      min-width: 280px;
+      background: #121826;
+      padding: 25px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #2c3545;
+      background: #ffffff;
+      color: #000000;
+      font-size: 1rem;
+    }
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-whatsapp, .btn-email {
+      flex: 1;
+      padding: 14px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      color: #ffffff;
+      text-align: center;
+    }
+    .btn-whatsapp {
+      background-color: #25D366;
+    }
+    .btn-email {
+      background-color: #007bff;
     }
   </style>
 </head>
@@ -57,31 +144,30 @@
     </nav>
   </header>
 
-  <section class="contact-section" style="padding: 40px 20px; max-width: 1100px; margin: 0 auto;">
+  <section class="contact-section">
     <div class="contact-container">
       <h2>Get In Touch</h2>
-      <p>Have a project in mind, need a website, or want to collaborate? Fill out the form below and send your message instantly via WhatsApp or Email.</p>
+      <p>Have a project in mind, need a website, or want to collaborate? Fill out the form below and send your message via WhatsApp or Email.</p>
 
-      <div class="contact-grid" style="display: flex; gap: 30px; flex-wrap: wrap; margin-top: 30px;">
-        <div class="contact-info" style="flex: 1; min-width: 250px; background: #121826; padding: 25px; border-radius: 8px; color: #fff;">
+      <div class="contact-grid">
+        <div class="contact-info">
           <h3>📞 Contact Information</h3>
-          <p><strong>Phone:</strong> <a href="tel:+256742859178" style="color: #00ffcc;">+256 742 859 178</a></p>
-          <p><strong>Email:</strong> <a href="mailto:biiroasadi804@gmail.com" style="color: #00ffcc;">biiroasadi804@gmail.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+256742859178">+256 742 859 178</a></p>
+          <p><strong>Email:</strong> <a href="mailto:biiroasadi804@gmail.com">biiroasadi804@gmail.com</a></p>
           <p><strong>Location:</strong> Kampala, Uganda</p>
         </div>
 
-        <!-- Static Contact Form with WhatsApp & Email Actions -->
-        <form class="contact-form" id="contactForm" onsubmit="return false;" style="flex: 2; min-width: 280px; display: flex; flex-direction: column; gap: 15px;">
-          <input type="text" id="name" placeholder="Your Name" required style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #1a2233; color: #fff;">
-          <input type="email" id="email" placeholder="Your Email" required style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #1a2233; color: #fff;">
-          <input type="text" id="subject" placeholder="Subject" required style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #1a2233; color: #fff;">
-          <textarea id="message" placeholder="Your Message" required rows="5" style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #1a2233; color: #fff;"></textarea>
+        <div class="contact-form">
+          <input type="text" id="name" placeholder="Your Name" required>
+          <input type="email" id="email" placeholder="Your Email" required>
+          <input type="text" id="subject" placeholder="Subject" required>
+          <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
           
-          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <button type="button" onclick="sendViaWhatsApp()" style="background-color: #25D366; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; flex: 1;">Send via WhatsApp</button>
-            <button type="button" onclick="sendViaEmail()" style="background-color: #007bff; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; flex: 1;">Send via Email</button>
+          <div class="btn-group">
+            <button type="button" class="btn-whatsapp" onclick="sendViaWhatsApp()">Send via WhatsApp</button>
+            <button type="button" class="btn-email" onclick="sendViaEmail()">Send via Email</button>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   </section>
@@ -91,7 +177,7 @@
   </footer>
 
   <script>
-    function sendViaWhatsApp() {
+    function getFormValues() {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
       const subject = document.getElementById('subject').value.trim();
@@ -99,29 +185,39 @@
 
       if (!name || !email || !subject || !message) {
         alert('Please fill in all fields before sending.');
-        return;
+        return null;
       }
+      return { name, email, subject, message };
+    }
 
-      const text = `Hello AsadiTech,%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Subject:* ${encodeURIComponent(subject)}%0A*Message:* ${encodeURIComponent(message)}`;
-      window.open(`https://wa.me/256742859178?text=${text}`, '_blank');
+    function sendViaWhatsApp() {
+      const data = getFormValues();
+      if (!data) return;
+
+      const text = `Hello AsadiTech,%0A%0A*Name:* ${encodeURIComponent(data.name)}%0A*Email:* ${encodeURIComponent(data.email)}%0A*Subject:* ${encodeURIComponent(data.subject)}%0A*Message:* ${encodeURIComponent(data.message)}`;
+      const link = document.createElement('a');
+      link.href = `https://wa.me/256742859178?text=${text}`;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
 
     function sendViaEmail() {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const subject = document.getElementById('subject').value.trim();
-      const message = document.getElementById('message').value.trim();
+      const data = getFormValues();
+      if (!data) return;
 
-      if (!name || !email || !subject || !message) {
-        alert('Please fill in all fields before sending.');
-        return;
-      }
-
-      const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-      const gmailUrl = `https://mail.google.com/mail/?view=cm&to=biiroasadi804@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const body = `Name: ${data.name}\nEmail: ${data.email}\n\nMessage:\n${data.message}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=biiroasadi804@gmail.com&su=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(body)}`;
       
-      // Navigates directly to Gmail, bypassing PC popup blockers
-      window.location.href = gmailUrl;
+      const link = document.createElement('a');
+      link.href = gmailUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     }
   </script>
 </body>
