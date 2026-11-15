@@ -5,6 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | AsadiTech</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Force header and navigation links into a horizontal row */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 5%;
+      background-color: #0b0f19;
+      flex-wrap: wrap;
+    }
+    header .logo {
+      margin: 0;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    header .logo span {
+      color: #00ffcc;
+    }
+    header nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    header nav ul li a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    header nav ul li a:hover,
+    header nav ul li a.active {
+      color: #00ffcc;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -20,27 +57,27 @@
     </nav>
   </header>
 
-  <section class="contact-section">
+  <section class="contact-section" style="padding: 40px 20px; max-width: 1100px; margin: 0 auto;">
     <div class="contact-container">
       <h2>Get In Touch</h2>
       <p>Have a project in mind, need a website, or want to collaborate? Fill out the form below and send your message instantly via WhatsApp or Email.</p>
 
-      <div class="contact-grid">
-        <div class="contact-info">
+      <div class="contact-grid" style="display: flex; gap: 30px; flex-wrap: wrap; margin-top: 30px;">
+        <div class="contact-info" style="flex: 1; min-width: 250px; background: #121826; padding: 25px; border-radius: 8px; color: #fff;">
           <h3>📞 Contact Information</h3>
-          <p><strong>Phone:</strong> <a href="tel:+256742859178">+256 742 859 178</a></p>
-          <p><strong>Email:</strong> <a href="mailto:biiroasadi804@gmail.com">biiroasadi804@gmail.com</a></p>
+          <p><strong>Phone:</strong> <a href="tel:+256742859178" style="color: #00ffcc;">+256 742 859 178</a></p>
+          <p><strong>Email:</strong> <a href="mailto:biiroasadi804@gmail.com" style="color: #00ffcc;">biiroasadi804@gmail.com</a></p>
           <p><strong>Location:</strong> Kampala, Uganda</p>
         </div>
 
         <!-- Static Contact Form with WhatsApp & Email Actions -->
-        <form class="contact-form" id="contactForm" onsubmit="return false;">
-          <input type="text" id="name" placeholder="Your Name" required>
-          <input type="email" id="email" placeholder="Your Email" required>
-          <input type="text" id="subject" placeholder="Subject" required>
-          <textarea id="message" placeholder="Your Message" required></textarea>
+        <form class="contact-form" id="contactForm" onsubmit="return false;" style="flex: 2; min-width: 280px; display: flex; flex-direction: column; gap: 15px;">
+          <input type="text" id="name" placeholder="Your Name" required style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #1a2233; color: #fff;">
+          <input type="email" id="email" placeholder="Your Email" required style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #1a2233; color: #fff;">
+          <input type="text" id="subject" placeholder="Subject" required style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #1a2233; color: #fff;">
+          <textarea id="message" placeholder="Your Message" required rows="5" style="padding: 12px; border-radius: 4px; border: 1px solid #333; background: #1a2233; color: #fff;"></textarea>
           
-          <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+          <div style="display: flex; gap: 10px; flex-wrap: wrap;">
             <button type="button" onclick="sendViaWhatsApp()" style="background-color: #25D366; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; flex: 1;">Send via WhatsApp</button>
             <button type="button" onclick="sendViaEmail()" style="background-color: #007bff; color: white; border: none; padding: 12px 20px; cursor: pointer; border-radius: 4px; font-weight: bold; flex: 1;">Send via Email</button>
           </div>
@@ -49,7 +86,7 @@
     </div>
   </section>
 
-  <footer>
+  <footer style="text-align: center; padding: 20px; background: #0b0f19; color: #aaa; margin-top: 40px;">
     <p>© 2026 AsadiTech | Designed with ❤️ by Biiro Asadi</p>
   </footer>
 
@@ -81,7 +118,10 @@
       }
 
       const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
-      window.location.href = `mailto:biiroasadi804@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&to=biiroasadi804@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      
+      // Navigates directly to Gmail, bypassing PC popup blockers
+      window.location.href = gmailUrl;
     }
   </script>
 </body>
