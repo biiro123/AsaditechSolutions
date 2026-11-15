@@ -4,66 +4,69 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Asadi Tech Solutions</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Modern Wide-Screen Layout & Striking Aesthetics */
+    /* Reset & Theme Styles (White, Blue, Black + Orange & Green Buttons) */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0b0e14;
-      color: #f8fafc;
+      background-color: #ffffff;
+      color: #111827;
       line-height: 1.6;
       width: 100%;
       overflow-x: hidden;
     }
 
-    /* Navigation Bar */
+    /* Strictly Horizontal Navigation Bar */
     header {
       display: flex !important;
+      flex-direction: row !important;
       justify-content: space-between !important;
       align-items: center !important;
-      padding: 20px 6% !important;
-      background-color: #121824 !important;
-      border-bottom: 1px solid #1e293b !important;
+      padding: 18px 6% !important;
+      background-color: #ffffff !important;
+      border-bottom: 3px solid #0056b3 !important;
       position: sticky;
       top: 0;
       z-index: 1000;
       width: 100%;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
     }
     .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #ffffff;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: #000000;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
-    .logo span { color: #00f2fe; }
+    .logo span { color: #0056b3; }
     nav {
-      display: flex;
-      align-items: center;
-      gap: 25px;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 24px !important;
       flex-wrap: wrap;
     }
     nav a {
-      text-decoration: none;
-      color: #cbd5e1;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
+      text-decoration: none !important;
+      color: #000000 !important;
+      font-weight: 600 !important;
+      font-size: 0.98rem !important;
+      transition: color 0.2s ease;
     }
     nav a:hover, nav a.active {
-      color: #00f2fe;
+      color: #0056b3 !important;
     }
     .login-btn {
-      background: transparent;
-      border: 2px solid #00f2fe;
-      color: #00f2fe;
-      padding: 8px 18px;
-      border-radius: 4px;
-      transition: all 0.3s ease;
+      background-color: #ff6b00 !important;
+      color: #ffffff !important;
+      padding: 8px 20px !important;
+      border-radius: 5px !important;
+      font-weight: bold !important;
+      transition: background-color 0.2s ease;
     }
     .login-btn:hover {
-      background: #00f2fe;
-      color: #0b0e14;
+      background-color: #e05e00 !important;
+      color: #ffffff !important;
     }
 
     /* Portfolio Section */
@@ -72,84 +75,161 @@
       max-width: 1400px;
       margin: 0 auto;
     }
-    .portfolio-container h2 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      color: #ffffff;
+    .section-header {
       text-align: center;
-    }
-    .portfolio-container h2 span { color: #00f2fe; }
-    .portfolio-subtitle {
-      font-size: 1.15rem;
-      color: #94a3b8;
       max-width: 800px;
-      margin: 0 auto 50px auto;
-      text-align: center;
+      margin: 0 auto 60px auto;
+    }
+    .section-header h2 {
+      font-size: 2.6rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #000000;
+    }
+    .section-header h2 span { color: #0056b3; }
+    .section-header p {
+      color: #4b5563;
+      font-size: 1.1rem;
       line-height: 1.7;
     }
 
-    /* Portfolio Grid */
+    /* Portfolio Cards Grid */
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
-    .portfolio-item {
-      background-color: #121824;
-      border: 1px solid #1e293b;
+    .portfolio-card {
+      background-color: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-top: 5px solid #0056b3;
       border-radius: 10px;
-      padding: 30px;
-      transition: transform 0.3s, border-color 0.3s;
+      padding: 35px;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-      border-color: #00f2fe;
-    }
-    .portfolio-item h3 {
-      font-size: 1.35rem;
-      margin-bottom: 12px;
-      color: #00f2fe;
-    }
-    .portfolio-item p {
-      color: #94a3b8;
-      font-size: 0.95rem;
-      line-height: 1.6;
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0, 86, 179, 0.12);
+      border-color: #0056b3;
     }
     .badge {
       display: inline-block;
-      background: rgba(0, 242, 254, 0.1);
-      color: #00f2fe;
-      padding: 4px 10px;
+      background-color: #e0f2fe;
+      color: #0056b3;
+      padding: 5px 12px;
       border-radius: 4px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 15px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
       width: fit-content;
+    }
+    .portfolio-card h3 {
+      font-size: 1.38rem;
+      margin-bottom: 14px;
+      color: #000000;
+    }
+    .portfolio-card p {
+      color: #374151;
+      font-size: 0.98rem;
+      margin-bottom: 25px;
+      line-height: 1.65;
+    }
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-green {
+      background-color: #16a34a;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.92rem;
+      transition: background-color 0.2s;
+      flex: 1;
+      text-align: center;
+    }
+    .btn-green:hover {
+      background-color: #15803d;
+    }
+    .btn-orange {
+      background-color: #ff6b00;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 0.92rem;
+      transition: background-color 0.2s;
+      flex: 1;
+      text-align: center;
+    }
+    .btn-orange:hover {
+      background-color: #e05e00;
+    }
+
+    /* High-Contrast Black & Blue CTA Section */
+    .cta-strip {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 60px 8%;
+      text-align: center;
+      border-top: 4px solid #0056b3;
+      margin-top: 80px;
+    }
+    .cta-strip h2 {
+      font-size: 2.1rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+    }
+    .cta-strip h2 span { color: #38bdf8; }
+    .cta-strip p {
+      color: #e5e7eb;
+      max-width: 650px;
+      margin: 0 auto 30px auto;
+      font-size: 1.1rem;
+    }
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .cta-buttons .btn-green,
+    .cta-buttons .btn-orange {
+      flex: initial;
+      padding: 14px 30px;
+      font-size: 1rem;
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 30px;
-      background-color: #121824;
-      color: #64748b;
-      border-top: 1px solid #1e293b;
+      padding: 25px;
+      background-color: #0056b3;
+      color: #ffffff;
+      font-weight: 500;
       font-size: 0.95rem;
-      margin-top: 60px;
     }
 
     @media (max-width: 768px) {
-      .portfolio-container h2 { font-size: 2rem; }
-      header { padding: 15px 5%; }
+      header { padding: 15px 4% !important; }
+      nav { gap: 14px !important; }
+      .section-header h2 { font-size: 2.1rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- Horizontal Navigation Bar -->
   <header>
     <div class="logo">Asadi <span>Tech</span> Solutions</div>
     <nav>
@@ -164,53 +244,79 @@
 
   <!-- Portfolio Section -->
   <section class="portfolio-section">
-    <div class="portfolio-container">
-      <h2>My <span>Portfolio</span></h2>
-      <p class="portfolio-subtitle">Explore a selection of my engineering projects, web applications, and network infrastructure deployments showcasing practical technical expertise.</p>
+    <div class="section-header">
+      <h2>Featured <span>Projects</span></h2>
+      <p>Explore real-world software applications, database systems, and commercial network infrastructure deployments engineered to solve practical business challenges.</p>
+    </div>
 
-      <div class="portfolio-grid">
-        <!-- Project 1 -->
-        <div class="portfolio-item">
-          <div>
-            <span class="badge">Networking & Infrastructure</span>
-            <h3>Commercial Wi-Fi Hotspot Network</h3>
-            <p>Designed and deployed local Wi-Fi hotspot network setups in rural trading centers, integrating Centipid billing technology, MikroTik routers, PoE switches, and dual electrical/solar backup power systems.</p>
-          </div>
+    <div class="portfolio-grid">
+      <!-- Project 1 -->
+      <div class="portfolio-card">
+        <div>
+          <span class="badge">Networking & Infrastructure</span>
+          <h3>Commercial Wi-Fi Hotspot Network</h3>
+          <p>Designed and deployed local Wi-Fi hotspot setups across trading centers in Butaleja, integrating Centipid voucher billing, MikroTik routers, PoE switches, and dual electrical/solar backup power.</p>
         </div>
-
-        <!-- Project 2 -->
-        <div class="portfolio-item">
-          <div>
-            <span class="badge">Web Application</span>
-            <h3>Executive Recruitment Platform</h3>
-            <p>Developed custom database logic and backend scripts for an executive recruitment and professional event management application to streamline client operations.</p>
-          </div>
+        <div class="card-actions">
+          <a href="contact.html" class="btn-green">Request Setup</a>
+          <a href="services.html" class="btn-orange">View Specs</a>
         </div>
+      </div>
 
-        <!-- Project 3 -->
-        <div class="portfolio-item">
-          <div>
-            <span class="badge">Financial Software</span>
-            <h3>Localized SACCO Accounting Module</h3>
-            <p>Engineered database logic scripts and custom interfaces for a localized Savings and Credit Cooperative (SACCO) financial module focused on streamlined payment recording and transaction management.</p>
-          </div>
+      <!-- Project 2 -->
+      <div class="portfolio-card">
+        <div>
+          <span class="badge">Web Application</span>
+          <h3>Executive Recruitment & Events Portal</h3>
+          <p>Engineered custom database architecture and backend workflows for an executive recruitment and event management firm to streamline candidate tracking and client operations.</p>
         </div>
+        <div class="card-actions">
+          <a href="contact.html" class="btn-green">Build Similar</a>
+          <a href="services.html" class="btn-orange">Learn More</a>
+        </div>
+      </div>
 
-        <!-- Project 4 -->
-        <div class="portfolio-item">
-          <div>
-            <span class="badge">Healthcare System</span>
-            <h3>Mpumude Clinic & Laboratory System</h3>
-            <p>Constructed local database applications and record-keeping software tailored for clinical patient record management and laboratory diagnostic tracking.</p>
-          </div>
+      <!-- Project 3 -->
+      <div class="portfolio-card">
+        <div>
+          <span class="badge">Financial Software</span>
+          <h3>Localized SACCO Accounting Module</h3>
+          <p>Developed database logic and user interfaces for a Savings and Credit Cooperative (SACCO) system focused on accurate member payment recording and financial reporting.</p>
+        </div>
+        <div class="card-actions">
+          <a href="contact.html" class="btn-green">Request Demo</a>
+          <a href="services.html" class="btn-orange">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="portfolio-card">
+        <div>
+          <span class="badge">Healthcare System</span>
+          <h3>Mpumude Clinic & Laboratory System</h3>
+          <p>Constructed a custom local database application for clinical patient record management, consultation tracking, and laboratory diagnostic workflows.</p>
+        </div>
+        <div class="card-actions">
+          <a href="contact.html" class="btn-green">Request Demo</a>
+          <a href="services.html" class="btn-orange">Learn More</a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- High-Contrast Black & Blue CTA Strip -->
+  <section class="cta-strip">
+    <h2>Have a Project Idea in <span>Mind?</span></h2>
+    <p>Whether you need a business website, custom database system, or commercial Wi-Fi installation, let's bring it to life.</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/256742859178?text=Hello%20AsadiTech,%20I%20saw%20your%20portfolio%20and%20want%20to%20discuss%20a%20project." target="_blank" class="btn-green">Chat on WhatsApp</a>
+      <a href="contact.html" class="btn-orange">Get a Quote</a>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer>
-    <p>© 2026 Asadi Tech Solutions | Engineered with excellence by Biiro Asadi</p>
+    <p>© 2026 Asadi Tech Solutions — Butaleja, Uganda | Designed by Biiro Asadi</p>
   </footer>
 
 </body>
