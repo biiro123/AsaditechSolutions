@@ -1,38 +1,291 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Register — Asadi Tech Solutions</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | Asadi Tech Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Modern Wide-Screen Layout & Striking Aesthetics */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b0e14;
+      color: #f8fafc;
+      line-height: 1.6;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Navigation Bar */
+    header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 20px 6% !important;
+      background-color: #121824 !important;
+      border-bottom: 1px solid #1e293b !important;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+    .logo span { color: #00f2fe; }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #cbd5e1;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      color: #00f2fe;
+    }
+    .login-btn {
+      background: transparent;
+      border: 2px solid #00f2fe;
+      color: #00f2fe;
+      padding: 8px 18px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .login-btn:hover {
+      background: #00f2fe;
+      color: #0b0e14;
+    }
+
+    /* Main Registration Container */
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 5%;
+    }
+    .register-card {
+      background-color: #121824;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 40px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .register-card h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .register-card h2 span { color: #00f2fe; }
+    .register-card p.subtitle {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 30px;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .form-group input {
+      width: 100%;
+      padding: 13px 15px;
+      border-radius: 6px;
+      border: 1px solid #334155;
+      background-color: #0b0e14;
+      color: #ffffff;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+    .form-group input:focus {
+      outline: none;
+      border-color: #00f2fe;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background-color: #00f2fe;
+      color: #0b0e14;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.2s, transform 0.2s;
+      box-shadow: 0 4px 14px rgba(0, 242, 254, 0.25);
+    }
+    .btn-submit:hover {
+      background-color: #00c7d4;
+      transform: translateY(-2px);
+    }
+
+    .message-box {
+      padding: 12px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      display: none;
+      text-align: center;
+    }
+    .message-error {
+      background-color: rgba(239, 68, 68, 0.15);
+      border: 1px solid #ef4444;
+      color: #fca5a5;
+    }
+    .message-success {
+      background-color: rgba(16, 185, 129, 0.15);
+      border: 1px solid #10b981;
+      color: #6ee7b7;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 22px;
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+    .login-link a {
+      color: #00f2fe;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #121824;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 768px) {
+      header { padding: 15px 5%; }
+      .register-card { padding: 30px 20px; }
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <h1 class="brand">Asadi Tech Solutions</h1>
-      <nav>
-        <a href="index.html">Home</a>
-      </nav>
-    </div>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">Asadi <span>Tech</span> Solutions</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="login-btn">Login</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <h2>Create an account</h2>
-    <div class="form" style="max-width:520px;">
-      <?php if (isset($_GET['error'])): ?>
-        <div style="color:#b91c1c; margin-bottom:10px;"><?= htmlspecialchars($_GET['error']) ?></div>
-      <?php endif; ?>
-      <form action="php/auth_register.php" method="post">
-        <input type="text" name="name" placeholder="Full name" required />
-        <input type="email" name="email" placeholder="Email address" required />
-        <input type="password" name="password" placeholder="Choose a secure password" required />
-        <button class="btn" type="submit">Register</button>
+  <!-- Registration Form -->
+  <main>
+    <div class="register-card">
+      <h2>Create an <span>Account</span></h2>
+      <p class="subtitle">Join Asadi Tech Solutions to manage your projects and inquiries</p>
+
+      <div id="statusMessage" class="message-box"></div>
+
+      <form id="registerForm" onsubmit="handleRegister(event)">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Choose a secure password (min. 6 characters)" minlength="6" required />
+        </div>
+
+        <button class="btn-submit" type="submit">Create Account</button>
       </form>
+
+      <div class="login-link">
+        Already have an account? <a href="login.html">Log in here</a>
+      </div>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="container">© 2025 Asadi Tech Solutions — Butaleja</div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 Asadi Tech Solutions — Butaleja | Designed by Biiro Asadi</p>
   </footer>
+
+  <script>
+    function handleRegister(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      const password = document.getElementById('password').value;
+      const statusBox = document.getElementById('statusMessage');
+
+      if (!name || !email || password.length < 6) {
+        statusBox.textContent = 'Please fill in all fields and use a password of at least 6 characters.';
+        statusBox.className = 'message-box message-error';
+        statusBox.style.display = 'block';
+        return;
+      }
+
+      // Store user profile locally so login.html can authenticate on static hosting
+      const users = JSON.parse(localStorage.getItem('asaditech_users') || '[]');
+      const exists = users.some(user => user.email === email);
+
+      if (exists) {
+        statusBox.textContent = 'An account with this email already exists. Please log in.';
+        statusBox.className = 'message-box message-error';
+        statusBox.style.display = 'block';
+        return;
+      }
+
+      users.push({ name, email, password });
+      localStorage.setItem('asaditech_users', JSON.stringify(users));
+
+      statusBox.textContent = 'Account created successfully! Redirecting to login...';
+      statusBox.className = 'message-box message-success';
+      statusBox.style.display = 'block';
+
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 1500);
+    }
+  </script>
+
 </body>
 </html>
