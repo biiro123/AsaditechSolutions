@@ -3,58 +3,215 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | AsadiTech</title>
+  <title>Portfolio | Asadi Tech Solutions</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Modern Wide-Screen Layout & Striking Aesthetics */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0b0e14;
+      color: #f8fafc;
+      line-height: 1.6;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    /* Navigation Bar */
+    header {
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      padding: 20px 6% !important;
+      background-color: #121824 !important;
+      border-bottom: 1px solid #1e293b !important;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+    .logo span { color: #00f2fe; }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #cbd5e1;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover, nav a.active {
+      color: #00f2fe;
+    }
+    .login-btn {
+      background: transparent;
+      border: 2px solid #00f2fe;
+      color: #00f2fe;
+      padding: 8px 18px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .login-btn:hover {
+      background: #00f2fe;
+      color: #0b0e14;
+    }
+
+    /* Portfolio Section */
+    .portfolio-section {
+      padding: 80px 8%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .portfolio-container h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #ffffff;
+      text-align: center;
+    }
+    .portfolio-container h2 span { color: #00f2fe; }
+    .portfolio-subtitle {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      max-width: 800px;
+      margin: 0 auto 50px auto;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* Portfolio Grid */
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .portfolio-item {
+      background-color: #121824;
+      border: 1px solid #1e293b;
+      border-radius: 10px;
+      padding: 30px;
+      transition: transform 0.3s, border-color 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .portfolio-item:hover {
+      transform: translateY(-5px);
+      border-color: #00f2fe;
+    }
+    .portfolio-item h3 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      color: #00f2fe;
+    }
+    .portfolio-item p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(0, 242, 254, 0.1);
+      color: #00f2fe;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      width: fit-content;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px;
+      background-color: #121824;
+      color: #64748b;
+      border-top: 1px solid #1e293b;
+      font-size: 0.95rem;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .portfolio-container h2 { font-size: 2rem; }
+      header { padding: 15px 5%; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Navigation Bar -->
   <header>
-    <h1 class="logo">Asadi<span>Tech</span></h1>
+    <div class="logo">Asadi <span>Tech</span> Solutions</div>
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="portfolio.html" class="active">Portfolio</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="login-btn">Login</a>
     </nav>
   </header>
 
+  <!-- Portfolio Section -->
   <section class="portfolio-section">
     <div class="portfolio-container">
-      <h2>My Portfolio</h2>
-      <p>Here are some of my creative works and sample projects that showcase my skills and passion for web design, graphics, and ICT innovation.</p>
+      <h2>My <span>Portfolio</span></h2>
+      <p class="portfolio-subtitle">Explore a selection of my engineering projects, web applications, and network infrastructure deployments showcasing practical technical expertise.</p>
 
       <div class="portfolio-grid">
+        <!-- Project 1 -->
         <div class="portfolio-item">
-          <img src="images/website1.jpg" alt="Website Design Project">
-          <h3>School Website</h3>
-          <p>A modern school website with responsive design and online admission features.</p>
+          <div>
+            <span class="badge">Networking & Infrastructure</span>
+            <h3>Commercial Wi-Fi Hotspot Network</h3>
+            <p>Designed and deployed local Wi-Fi hotspot network setups in rural trading centers, integrating Centipid billing technology, MikroTik routers, PoE switches, and dual electrical/solar backup power systems.</p>
+          </div>
         </div>
 
+        <!-- Project 2 -->
         <div class="portfolio-item">
-          <img src="images/website2.jpg" alt="Business Website">
-          <h3>Business Landing Page</h3>
-          <p>Professional website for a small business, optimized for marketing and branding.</p>
+          <div>
+            <span class="badge">Web Application</span>
+            <h3>Executive Recruitment Platform</h3>
+            <p>Developed custom database logic and backend scripts for an executive recruitment and professional event management application to streamline client operations.</p>
+          </div>
         </div>
 
+        <!-- Project 3 -->
         <div class="portfolio-item">
-          <img src="images/graphics1.jpg" alt="Graphic Design">
-          <h3>Brand Logo Design</h3>
-          <p>Custom logo and color scheme designed for a client’s local enterprise.</p>
+          <div>
+            <span class="badge">Financial Software</span>
+            <h3>Localized SACCO Accounting Module</h3>
+            <p>Engineered database logic scripts and custom interfaces for a localized Savings and Credit Cooperative (SACCO) financial module focused on streamlined payment recording and transaction management.</p>
+          </div>
         </div>
 
+        <!-- Project 4 -->
         <div class="portfolio-item">
-          <img src="images/repair.jpg" alt="IT Support">
-          <h3>ICT Maintenance</h3>
-          <p>Hardware setup, system installations, and maintenance support for institutions.</p>
+          <div>
+            <span class="badge">Healthcare System</span>
+            <h3>Mpumude Clinic & Laboratory System</h3>
+            <p>Constructed local database applications and record-keeping software tailored for clinical patient record management and laboratory diagnostic tracking.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>© 2025 AsadiTech | Designed with ❤️ by Biiro Asadi</p>
+    <p>© 2026 Asadi Tech Solutions | Engineered with excellence by Biiro Asadi</p>
   </footer>
+
 </body>
 </html>
